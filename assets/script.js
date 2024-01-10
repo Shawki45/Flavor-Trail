@@ -3,7 +3,7 @@ const url =
 
 // Your API token or credentials here
 const apiToken = "ToyYqIZSbvEarVjWfZaLj1jawbX6kwF6kFKciXRV5WPK5zC9EzSvkqMQ7i36QZ9feLDODdIzqqSTqHHiGg8ZMITPktE1BGeHbVHL26ekB_CpMBTYLfGv0EJGJImdZXYx";
-
+const apiPlaces = "AIzaSyCL7avHl4kUCwKaLbRkxAkClyjYjbEzq-U"
 // Making a fetch call with an Authorization header
 fetch(url, {
   method: "GET", // or 'POST' if required
