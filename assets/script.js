@@ -1,13 +1,13 @@
 var getReviews = async (lat, lon) => {
   console.log(lat, lon);
   const urlYelp = `https://floating-headland-95050.herokuapp.com/https://api.yelp.com/v3/businesses/search?term=restaurants&latitude=${lat}&longitude=${lon}`;
-  
+
   // Your API token or credentials here
   const apiToken = "ToyYqIZSbvEarVjWfZaLj1jawbX6kwF6kFKciXRV5WPK5zC9EzSvkqMQ7i36QZ9feLDODdIzqqSTqHHiGg8ZMITPktE1BGeHbVHL26ekB_CpMBTYLfGv0EJGJImdZXYx";
 
   // Making a fetch call with an Authorization header
 
-  fetch(urlYelp, {
+  var reviews = await fetch(urlYelp, {
     method: "GET", // or 'POST' if required
     headers: {
       "Content-Type": "application/json",
@@ -20,10 +20,43 @@ var getReviews = async (lat, lon) => {
       }
       return response.json(); // we only get here if there is no error
     })
-    .then((data) => console.log(data))
-    .catch((error) =>
-      console.error("There has been a problem with your fetch operation:", error)
+    .then((data) => {
+      console.log(data)
+      
+      data.businesses.forEach(element => {
+        let card = $('<div class="card blue-grey darken-1">');
+        let cardContent = $('<div class="card-content white-text">');
+        let span = $(`<span class="card-title">${element.name}</span>`);
+        let rating = $(`<p>Rating: ${element.rating}</p>`);
+        let reviewCount = $(`<p>Reviews: ${element.review_count}</p>`);
+
+
+        // <div class="card-action">
+        //   <a href="#">This is a link</a>
+        //   <a href="#">This is a link</a>
+        // </div>
+        card.append(cardContent);
+        cardContent.append(span);
+        cardContent.append(rating);
+        cardContent.append(reviewCount);
+
+        $(".restaurants").append(card);
+      });
+      
+
+
+
+
+
+
+
+    })
+    .catch ((error) =>
+  console.error("There has been a problem with your fetch operation:", error)
     );
+
+
+
 }
 
 var getLocation = async () => {
@@ -60,6 +93,7 @@ var getLocation = async () => {
       console.error(`There was a problem with the fetch operation:`, error);
     });
 }
+
 $(".search_btn").on("click", () => {
   getLocation();
   console.log($(".city").val());
