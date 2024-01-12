@@ -1,24 +1,9 @@
+header{
+    display: flex;
+    justify-content: center;
+}
+
 :root {
-    background-color: #C5E7D0;
+  background-color: #c5e7d0;
 }
 
-h1 {
-    text-align: center;
-    margin-top: 45px;
-    margin-bottom: 45px;
-    margin-left: 45px;
-    margin-right: 45px;
-    padding: 5%;
-    background-color: #BF3103;
-    }
-
-.page-footer {
-    background-color: #BF3103;
-}
-
-.card-panel {
-    margin-top: 45px;
-    margin-bottom: 45px;
-    margin-left: 45px;
-    margin-right: 45px;
-}
