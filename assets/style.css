@@ -1,18 +1,6 @@
 
-
- header {
-    display: flex;
-    justify-content: center;
+:root {
+  background-color: #c5e7d0;
 }
 
-div.col.search{
-    font-size: large;
-    display: flex;
-    justify-content: flex-start;
-}
 
-input.city{
-    font-size: medium;
-    display: flex;
-    align-items: flex-end ;
-}
