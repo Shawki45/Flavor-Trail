@@ -25,11 +25,11 @@ var getReviews = async (lat, lon) => {
 
       data.businesses.forEach(element => {
         if (element.image_url) {
-          let card = $(`<div class="row">
-            <div class="col s12 m7">
+          let card = $(`
+            <div class="col s3 m3">
               <div class="card">
                 <div class="card-image">
-                  <img src="${element.image_url}">
+                  <img width="500" height="400" src="${element.image_url}">
                   <span class="card-title">${element.name}</span>
                 </div>
                 <div class="card-content">
@@ -42,7 +42,7 @@ var getReviews = async (lat, lon) => {
                 </div>
               </div>
             </div>
-          </div>`);
+            `);
 
         $(".restaurants").append(card);
 

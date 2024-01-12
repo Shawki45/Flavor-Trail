@@ -1,3 +1,8 @@
+header{
+    display: flex;
+    justify-content: center;
+}
+
 :root {
     background-color: #C5E7D0;
 }
@@ -27,3 +32,4 @@ h1 {
     background-color: rgb(0 0 0 / 50%);
     
 }
+
