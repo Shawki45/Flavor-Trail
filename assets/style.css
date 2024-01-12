@@ -1,11 +1,9 @@
-header {
+header{
     display: flex;
     justify-content: center;
-
 }
 
 :root {
   background-color: #c5e7d0;
 }
-
 
