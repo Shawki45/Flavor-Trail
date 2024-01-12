@@ -22,3 +22,8 @@ h1 {
     margin-left: 45px;
     margin-right: 45px;
 }
+
+.card-title {
+    background-color: rgb(0 0 0 / 50%);
+    
+}
