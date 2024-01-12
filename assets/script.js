@@ -24,26 +24,31 @@ var getReviews = async (lat, lon) => {
       console.log(data)
 
       data.businesses.forEach(element => {
-        let card = $(`<div class="row">
-          <div class="col s12 m7">
-            <div class="card">
-              <div class="card-image">
-                <img src="${element.image_url}">
-                <span class="card-title">${element.name}</span>
-              </div>
-              <div class="card-content">
-                <p>Cuisine: ${element.categories[0].title}</p>
-                <p>Rating: ${element.rating}</p>
-                <p>Reviews: ${element.review_count}</p>
-              </div>
-              <div class="card-action">
-                <a href="${element.url}">More Info</a>
+        if (element.image_url) {
+          let card = $(`<div class="row">
+            <div class="col s12 m7">
+              <div class="card">
+                <div class="card-image">
+                  <img src="${element.image_url}">
+                  <span class="card-title">${element.name}</span>
+                </div>
+                <div class="card-content">
+                  <p>Cuisine: ${element.categories[0].title}</p>
+                  <p>Rating: ${element.rating}</p>
+                  <p>Reviews: ${element.review_count}</p>
+                </div>
+                <div class="card-action">
+                  <a href="${element.url}">More Info</a>
+                </div>
               </div>
             </div>
-          </div>
-        </div>`);
+          </div>`);
 
         $(".restaurants").append(card);
+
+        } else {
+          
+        }
       });
     })
     .catch((error) =>
