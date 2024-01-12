@@ -7,7 +7,7 @@ var getReviews = async (lat, lon) => {
 
   // Making a fetch call with an Authorization header
 
-  var reviews = await fetch(urlYelp, {
+  await fetch(urlYelp, {
     method: "GET", // or 'POST' if required
     headers: {
       "Content-Type": "application/json",
@@ -22,41 +22,33 @@ var getReviews = async (lat, lon) => {
     })
     .then((data) => {
       console.log(data)
-      
+
       data.businesses.forEach(element => {
-        let card = $('<div class="card blue-grey darken-1">');
-        let cardContent = $('<div class="card-content white-text">');
-        let span = $(`<span class="card-title">${element.name}</span>`);
-        let rating = $(`<p>Rating: ${element.rating}</p>`);
-        let reviewCount = $(`<p>Reviews: ${element.review_count}</p>`);
-
-
-        // <div class="card-action">
-        //   <a href="#">This is a link</a>
-        //   <a href="#">This is a link</a>
-        // </div>
-        card.append(cardContent);
-        cardContent.append(span);
-        cardContent.append(rating);
-        cardContent.append(reviewCount);
+        let card = $(`<div class="row">
+          <div class="col s12 m7">
+            <div class="card">
+              <div class="card-image">
+                <img src="${element.image_url}">
+                <span class="card-title">${element.name}</span>
+              </div>
+              <div class="card-content">
+                <p>Cuisine: ${element.categories[0].title}</p>
+                <p>Rating: ${element.rating}</p>
+                <p>Reviews: ${element.review_count}</p>
+              </div>
+              <div class="card-action">
+                <a href="${element.url}">More Info</a>
+              </div>
+            </div>
+          </div>
+        </div>`);
 
         $(".restaurants").append(card);
       });
-      
-
-
-
-
-
-
-
     })
-    .catch ((error) =>
-  console.error("There has been a problem with your fetch operation:", error)
+    .catch((error) =>
+      console.error("There has been a problem with your fetch operation:", error)
     );
-
-
-
 }
 
 var getLocation = async () => {
@@ -95,6 +87,7 @@ var getLocation = async () => {
 }
 
 $(".search_btn").on("click", () => {
+  $(".restaurants").empty();
   getLocation();
   console.log($(".city").val());
 });
