@@ -1,35 +1,52 @@
-header{
-    display: flex;
-    justify-content: center;
-}
+header {
+  display: flex;
+  justify-content: center;
+  }
 
 :root {
-    background-color: #C5E7D0;
+  background-color: #C5E7D0;
 }
 
 h1 {
-    text-align: center;
-    margin-top: 45px;
-    margin-bottom: 45px;
-    margin-left: 45px;
-    margin-right: 45px;
-    padding: 5%;
-    background-color: #BF3103;
-    }
+  text-align: center;
+  margin-top: 45px;
+  margin-bottom: 45px;
+  margin-left: 45px;
+  margin-right: 45px;
+  padding: 5%;
+  background-color: #C03507;
+  border-radius: 25px;
+}
+
+h2 {
+  text-align: center;
+  margin-top: 45px;
+  margin-bottom: 45px;
+  margin-left: 45px;
+  margin-right: 45px;
+  padding: 5%;
+  background-color: #C03507;
+  border-radius: 25px;
+}
+
+h3 {
+  text-align: center;
+  margin-top: 45px;
+  margin-bottom: 45px;
+  margin-left: 45px;
+  margin-right: 45px;
+  padding: 5%;
+  background-color: #C03507;
+  border-radius: 25px;
+}
 
 .page-footer {
-    background-color: #BF3103;
+  background-color: #BF3103;
 }
 
-.card-panel {
-    margin-top: 45px;
-    margin-bottom: 45px;
-    margin-left: 45px;
-    margin-right: 45px;
-}
+
 
 .card-title {
-    background-color: rgb(0 0 0 / 50%);
-    
-}
+  background-color: rgb(0 0 0 / 50%);
 
+}
