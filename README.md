@@ -33,5 +33,6 @@ I would like to thank the instructors and tutors for their supprot and help thro
 
 
 
-## Screenshot of page. 
+## Screenshot
 
+![flavor trail screenshot](./images/flavor-trail-screenshot.png)
