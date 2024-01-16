@@ -1,14 +1,11 @@
+// Displays restaurant reviews from Yelp API
 var getReviews = async (lat, lon) => {
-  console.log(lat, lon);
   const urlYelp = `https://floating-headland-95050.herokuapp.com/https://api.yelp.com/v3/businesses/search?term=restaurants&latitude=${lat}&longitude=${lon}`;
-
-  // Your API token or credentials here
   const apiToken = "ToyYqIZSbvEarVjWfZaLj1jawbX6kwF6kFKciXRV5WPK5zC9EzSvkqMQ7i36QZ9feLDODdIzqqSTqHHiGg8ZMITPktE1BGeHbVHL26ekB_CpMBTYLfGv0EJGJImdZXYx";
 
   // Making a fetch call with an Authorization header
-
   await fetch(urlYelp, {
-    method: "GET", // or 'POST' if required
+    method: "GET",
     headers: {
       "Content-Type": "application/json",
       Authorization: "Bearer " + apiToken,
@@ -21,15 +18,15 @@ var getReviews = async (lat, lon) => {
       return response.json(); // we only get here if there is no error
     })
     .then((data) => {
-      console.log(data)
 
+      // Displays restaurant results in image cards
       data.businesses.forEach(element => {
         if (element.image_url) {
           let card = $(`
             <div class="col s3 m3">
               <div class="card">
                 <div class="card-image">
-                  <img width="500" height="400" src="${element.image_url}">
+                  <img width=300 height=300 src="${element.image_url}">
                   <span class="card-title">${element.name}</span>
                 </div>
                 <div class="card-content">
@@ -45,7 +42,8 @@ var getReviews = async (lat, lon) => {
             `);
 
         $(".restaurants").append(card);
-
+        
+        // Omits result if there is no image
         } else {
           
         }
@@ -56,18 +54,15 @@ var getReviews = async (lat, lon) => {
     );
 }
 
+// Gets the latitude and longitude of the city you search for
 var getLocation = async () => {
   const apiPlaces = "AIzaSyCL7avHl4kUCwKaLbRkxAkClyjYjbEzq-U"
   var cityState = ($(".city").val());
-  // const baseURL = `https://maps.googleapis.com/maps/api/place/textsearch/json?query${cityState}`;
   const baseURL = `https://floating-headland-95050.herokuapp.com/https://maps.googleapis.com/maps/api/place/textsearch/json?query=${cityState}&key=${apiPlaces}`;
-  // const query = `${city}, ${state}`;
 
-  // url.searchParams.append(‘query’, query);\
-  // url.searchParams.append(‘key’, apiKey);
   // Make the API request using the fetch API
   fetch(baseURL, {
-    method: "GET", // or 'POST' if required
+    method: "GET",
     headers: {
       "Content-Type": "application/json",
       Authorization: "Bearer " + apiPlaces
@@ -81,7 +76,6 @@ var getLocation = async () => {
     })
     .then((data) => {
       // Process and use the results as needed
-      // console.log(data.results[0].geometry.location);
       let latitude = data.results[0].geometry.location.lat
       let longitude = data.results[0].geometry.location.lng
       getReviews(latitude, longitude);
@@ -91,17 +85,8 @@ var getLocation = async () => {
     });
 }
 
+// Gets city location and nearby restaurant reviews on click
 $(".search_btn").on("click", () => {
   $(".restaurants").empty();
   getLocation();
-  console.log($(".city").val());
 });
-
-
-
-
-// // Define the city and state for your search
-// const city = ‘New York’;
-// const state = ‘New York’;
-// // Create the API request URL
-// const baseUrl = ‘https://maps.googleapis.com/maps/api/place/textsearch/json’;
