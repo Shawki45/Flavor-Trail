@@ -11,9 +11,12 @@ Getting Started
 Once completely built, this application will function as a deployed app on Heroku
 
 Installation
-Clone the repo git clone https://github.com/404pandas/PARSR.git
+Clone the repo git clone https://github.com/Shawki45/Flavor-Trail.git
 Usage
 Once the app is functional, screenshots will be added in this section.
+
+
+
 
 Roadmap
  Map
@@ -37,9 +40,10 @@ This project is licensed under the MIT license.
 See LICENSE.txt for more information.
 
 Contact
-Mary Elenius - mary.panda.jackson@gmail.com
-
-Project Link: https://github.com/404pandas/PARSR
+Shawki Haifa @ 
+Matthew Beke @
+Kevin Hunt @ 
+Project Link: 
 
 Acknowledgments
-I would like to give a big shoutout to my partner in crime and daughter, Yennefer! Every day she proves she is small yet mighty!
+I would like to give a BIG shoutout John and Mary for helping to figure out the missing links! ALSO pineapple on pizza?

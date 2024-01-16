@@ -2,13 +2,13 @@ var getReviews = async (lat, lon) => {
   console.log(lat, lon);
   const urlYelp = `https://floating-headland-95050.herokuapp.com/https://api.yelp.com/v3/businesses/search?term=restaurants&latitude=${lat}&longitude=${lon}`;
 
-  // Your API token or credentials here
+
   const apiToken = "ToyYqIZSbvEarVjWfZaLj1jawbX6kwF6kFKciXRV5WPK5zC9EzSvkqMQ7i36QZ9feLDODdIzqqSTqHHiGg8ZMITPktE1BGeHbVHL26ekB_CpMBTYLfGv0EJGJImdZXYx";
 
-  // Making a fetch call with an Authorization header
+
 
   await fetch(urlYelp, {
-    method: "GET", // or 'POST' if required
+    method: "GET",
     headers: {
       "Content-Type": "application/json",
       Authorization: "Bearer " + apiToken,
@@ -18,7 +18,7 @@ var getReviews = async (lat, lon) => {
       if (!response.ok) {
         throw new Error("Network response was not ok " + response.statusText);
       }
-      return response.json(); // we only get here if there is no error
+      return response.json();
     })
     .then((data) => {
       console.log(data)
@@ -44,10 +44,10 @@ var getReviews = async (lat, lon) => {
             </div>
             `);
 
-        $(".restaurants").append(card);
+          $(".restaurants").append(card);
 
         } else {
-          
+
         }
       });
     })
@@ -59,15 +59,11 @@ var getReviews = async (lat, lon) => {
 var getLocation = async () => {
   const apiPlaces = "AIzaSyCL7avHl4kUCwKaLbRkxAkClyjYjbEzq-U"
   var cityState = ($(".city").val());
-  // const baseURL = `https://maps.googleapis.com/maps/api/place/textsearch/json?query${cityState}`;
-  const baseURL = `https://floating-headland-95050.herokuapp.com/https://maps.googleapis.com/maps/api/place/textsearch/json?query=${cityState}&key=${apiPlaces}`;
-  // const query = `${city}, ${state}`;
 
-  // url.searchParams.append(‘query’, query);\
-  // url.searchParams.append(‘key’, apiKey);
-  // Make the API request using the fetch API
+  const baseURL = `https://floating-headland-95050.herokuapp.com/https://maps.googleapis.com/maps/api/place/textsearch/json?query=${cityState}&key=${apiPlaces}`;
+
   fetch(baseURL, {
-    method: "GET", // or 'POST' if required
+    method: "GET",
     headers: {
       "Content-Type": "application/json",
       Authorization: "Bearer " + apiPlaces
@@ -80,8 +76,6 @@ var getLocation = async () => {
       return response.json();
     })
     .then((data) => {
-      // Process and use the results as needed
-      // console.log(data.results[0].geometry.location);
       let latitude = data.results[0].geometry.location.lat
       let longitude = data.results[0].geometry.location.lng
       getReviews(latitude, longitude);
@@ -96,12 +90,3 @@ $(".search_btn").on("click", () => {
   getLocation();
   console.log($(".city").val());
 });
-
-
-
-
-// // Define the city and state for your search
-// const city = ‘New York’;
-// const state = ‘New York’;
-// // Create the API request URL
-// const baseUrl = ‘https://maps.googleapis.com/maps/api/place/textsearch/json’;
