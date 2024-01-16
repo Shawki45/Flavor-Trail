@@ -1,45 +1,37 @@
 # Flavor-Trail
 
-Table of Contents
-About The Project
-This project was built with the intend to help Users to find Top rated Food places in searched cities.
 
-Built With
-Javascript MongoDB Heroku Node.js React Express npm VS Code MUI
+## Description.
+    It all started with an idea and than we got the idea and we started putting it together. Bam a couple days later it came together and the app was born. Our app is simple to use and simple to understand. All you do is put in a city and it will pull up all the best restaurants around or in that area. 
 
-Getting Started
-Once completely built, this application will function as a deployed app on Heroku
+## Built With
+    - Javascript
+    - APIs.
+    - Materialize.
+    - CSS.
+    - Html. 
 
-Installation
-Clone the repo git clone https://github.com/404pandas/PARSR.git
-Usage
-Once the app is functional, screenshots will be added in this section.
 
-Roadmap
- Map
- Stripe
- Twilio
-See the open issues for a full list of proposed features (and known issues).
 
-Contributing
-Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are greatly appreciated.
 
-If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement". Don't forget to give the project a star! Thanks again!
+## Project Link
+    - https://github.com/Shawki45/Flavor-Trail.git
+    - https://shawki45.github.io/Flavor-Trail/
 
-Fork the Project
-Create your Feature Branch (git checkout -b feature/AmazingFeature)
-Commit your Changes (git commit -m 'Add some AmazingFeature')
-Push to the Branch (git push origin feature/AmazingFeature)
-Open a Pull Request
-License
-This project is licensed under the MIT license.
+## Acknowledgments
+I would like to thank the instructors and tutors for their supprot and help throughout this entire project. Without them we wouldnt have been able to acheive what we have acheived this week. I would also like to thank the bootcamp for this amazing award, without them the project wouldnt have never started. And Thank you to everyone else involved. 
 
-See LICENSE.txt for more information.
+## Sources
+    - https://www.w3schools.com/js/js_comparisons.asp
+    - https://developer.mozilla.org/en-US/
+    - https://materializecss.com/getting-started.html
+    - Youtube.
+    - Google.com
+    - Instructors and tutors.
+    - https://flexboxfroggy.com/
+    
 
-Contact
-Mary Elenius - mary.panda.jackson@gmail.com
 
-Project Link: https://github.com/404pandas/PARSR
 
-Acknowledgments
-I would like to give a big shoutout to my partner in crime and daughter, Yennefer! Every day she proves she is small yet mighty!
+## Screenshot of page. 
+
