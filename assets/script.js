@@ -41,11 +41,11 @@ var getReviews = async (lat, lon) => {
             </div>
             `);
 
-        $(".restaurants").append(card);
-        
+        $(".restaurants").append(card)
+
         // Omits result if there is no image
         } else {
-          
+
         }
       });
     })
@@ -90,3 +90,5 @@ $(".search_btn").on("click", () => {
   $(".restaurants").empty();
   getLocation();
 });
+
+
