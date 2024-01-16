@@ -86,8 +86,10 @@ var getLocation = async () => {
 }
 
 // Gets city location and nearby restaurant reviews on click
+var reviewHeader = $(`<h2>Best restaurants in your area</h2>`)
 $(".search_btn").on("click", () => {
   $(".restaurants").empty();
+  $(".restaurants").append(reviewHeader);
   getLocation();
 });
 
