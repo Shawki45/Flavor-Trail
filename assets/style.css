@@ -1,50 +1,46 @@
+body {
+  font-family: 'Prata', serif;
+  background-color: #C5E7D0;
+}
+
 header {
   display: flex;
   justify-content: center;
-  }
+}
 
-:root {
-  background-color: #C5E7D0;
+.cities {
+  display: flex;
+  justify-content: center;
+}
+
+.search {
+  margin-bottom: 96px;
+}
+
+.search_btn {
+  background-color: #012F2D;
 }
 
 h1 {
   text-align: center;
-  margin-top: 45px;
-  margin-bottom: 45px;
-  margin-left: 45px;
-  margin-right: 45px;
-  padding: 5%;
-  background-color: #C03507;
+  padding: 30px;
+  padding-left: 40px;
+  padding-right: 40px;
+  background-color: #FCA332;
   border-radius: 25px;
 }
 
 h2 {
   text-align: center;
-  margin-top: 45px;
-  margin-bottom: 45px;
-  margin-left: 45px;
-  margin-right: 45px;
-  padding: 5%;
-  background-color: #C03507;
-  border-radius: 25px;
-}
-
-h3 {
-  text-align: center;
-  margin-top: 45px;
-  margin-bottom: 45px;
-  margin-left: 45px;
-  margin-right: 45px;
-  padding: 5%;
-  background-color: #C03507;
+  padding: 40px;
+  background-color: #D64C00;
   border-radius: 25px;
 }
 
 .page-footer {
-  background-color: #BF3103;
+  background-color: #BC2B00;
 }
 
 .card-title {
   background-color: rgb(0 0 0 / 50%);
-
 }
