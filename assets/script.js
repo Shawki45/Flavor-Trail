@@ -1,7 +1,8 @@
 // Displays restaurant reviews from Yelp API
 var getReviews = async (lat, lon) => {
   const urlYelp = `https://floating-headland-95050.herokuapp.com/https://api.yelp.com/v3/businesses/search?term=restaurants&latitude=${lat}&longitude=${lon}`;
-  const apiToken = "ToyYqIZSbvEarVjWfZaLj1jawbX6kwF6kFKciXRV5WPK5zC9EzSvkqMQ7i36QZ9feLDODdIzqqSTqHHiGg8ZMITPktE1BGeHbVHL26ekB_CpMBTYLfGv0EJGJImdZXYx";
+  const apiToken =
+    "ToyYqIZSbvEarVjWfZaLj1jawbX6kwF6kFKciXRV5WPK5zC9EzSvkqMQ7i36QZ9feLDODdIzqqSTqHHiGg8ZMITPktE1BGeHbVHL26ekB_CpMBTYLfGv0EJGJImdZXYx";
 
   // Making a fetch call with an Authorization header
   await fetch(urlYelp, {
@@ -18,9 +19,8 @@ var getReviews = async (lat, lon) => {
       return response.json(); // we only get here if there is no error
     })
     .then((data) => {
-
       // Displays restaurant results in image cards
-      data.businesses.forEach(element => {
+      data.businesses.forEach((element) => {
         if (element.image_url) {
           let card = $(`
             <div class="col s3 m3">
@@ -41,23 +41,25 @@ var getReviews = async (lat, lon) => {
             </div>
             `);
 
-        $(".restaurants").append(card)
+          $(".restaurants").append(card);
 
-        // Omits result if there is no image
+          // Omits result if there is no image
         } else {
-
         }
       });
     })
     .catch((error) =>
-      console.error("There has been a problem with your fetch operation:", error)
+      console.error(
+        "There has been a problem with your fetch operation:",
+        error
+      )
     );
-}
+};
 
 // Gets the latitude and longitude of the city you search for
 var getLocation = async () => {
-  const apiPlaces = "AIzaSyCL7avHl4kUCwKaLbRkxAkClyjYjbEzq-U"
-  var cityState = ($(".city").val());
+  const apiPlaces = "AIzaSyCL7avHl4kUCwKaLbRkxAkClyjYjbEzq-U";
+  var cityState = $(".city").val();
   const baseURL = `https://floating-headland-95050.herokuapp.com/https://maps.googleapis.com/maps/api/place/textsearch/json?query=${cityState}&key=${apiPlaces}`;
 
   // Make the API request using the fetch API
@@ -65,8 +67,8 @@ var getLocation = async () => {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
-      Authorization: "Bearer " + apiPlaces
-    }
+      Authorization: "Bearer " + apiPlaces,
+    },
   })
     .then((response) => {
       if (!response.ok) {
@@ -76,14 +78,14 @@ var getLocation = async () => {
     })
     .then((data) => {
       // Process and use the results as needed
-      let latitude = data.results[0].geometry.location.lat
-      let longitude = data.results[0].geometry.location.lng
+      let latitude = data.results[0].geometry.location.lat;
+      let longitude = data.results[0].geometry.location.lng;
       getReviews(latitude, longitude);
     })
     .catch((error) => {
       console.error(`There was a problem with the fetch operation:`, error);
     });
-}
+};
 
 // Gets city location and nearby restaurant reviews on click
 $(".search_btn").on("click", () => {
