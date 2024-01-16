@@ -23,7 +23,7 @@ var getReviews = async (lat, lon) => {
       data.businesses.forEach(element => {
         if (element.image_url) {
           let card = $(`
-            <div class="col s3 m3">
+            <div class="col s12 m6 l4 xl3">
               <div class="card">
                 <div class="card-image">
                   <img width=300 height=300 src="${element.image_url}">
